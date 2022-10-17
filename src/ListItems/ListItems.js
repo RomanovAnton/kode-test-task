@@ -1,5 +1,6 @@
 import React from "react";
+import "./ListItems.scss";
 
 export default function ListItems() {
-  return <div>ListItems</div>;
+  return <ul className="list-items"></ul>;
 }
