@@ -9,7 +9,6 @@ import { useDispatch, useSelector } from "react-redux";
 export default function Home() {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.items.items);
-  console.log(data);
 
   useEffect(() => {
     dispatch(fetchItems("all"));

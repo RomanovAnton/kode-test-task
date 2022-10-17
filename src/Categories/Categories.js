@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setCategory } from "../redux/itemsSlice";
 import "./Categories.scss";
 
 export default function Categories() {
-  const [currentCategory, setCurrentCategory] = useState("");
+  const currentCategory = useSelector((state) => state.items.category);
+  const dispatch = useDispatch();
+
   const categoriesArr = [
     "Все",
     "Designers",
@@ -11,6 +15,7 @@ export default function Categories() {
     "iOS",
     "Android",
   ];
+
   return (
     <ul className="categories">
       {categoriesArr.map((item, idx) => (
@@ -21,7 +26,7 @@ export default function Categories() {
               ? "categories__item categories__item_active"
               : "categories__item"
           }
-          onClick={() => setCurrentCategory(item)}
+          onClick={() => dispatch(setCategory(item))}
         >
           {item}
         </li>
