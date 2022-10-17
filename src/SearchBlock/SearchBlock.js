@@ -8,7 +8,7 @@ export default function SearchBlock() {
 
   return (
     <div className="search-block">
-      <SearchIcon />
+      <SearchIcon className="search-block__icon" />
       <input
         className="search-block__input"
         type="text"

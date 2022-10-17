@@ -1,6 +1,7 @@
 @import "../sass/variables";
 
 .search-block {
+  margin: 6px auto;
   width: 100%;
   height: 40px;
   border-radius: 16px;
@@ -8,7 +9,6 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  padding: 0 10px;
   transition: 0.3s;
 
   &:focus-within {
@@ -16,19 +16,25 @@
   }
 
   &__input {
-    width: 100%;
+    padding: 0;
+    width: calc(100% - 21px - 21px);
     height: 20px;
     background-color: $color-light-grey;
     border: none;
     outline: none;
   }
 
-  &__icon {
-    transition: 0.3s;
-    cursor: pointer;
+  &__icon:first-child {
+    padding-left: 10px;
   }
 
-  &__icon:hover {
+  &__icon:last-child {
+    padding-right: 10px;
+  }
+
+  &__icon:last-child:hover {
+    transition: 0.3s;
     fill: $color-purple;
+    cursor: pointer;
   }
 }
