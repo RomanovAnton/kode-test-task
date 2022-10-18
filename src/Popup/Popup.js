@@ -6,23 +6,17 @@ import "./Popup.scss";
 export default function Popup() {
   const dispath = useDispatch();
   const sort = useSelector((state) => state.popup.sort);
-  const popupRef = useRef(null);
-
-  useEffect(() => {
-    const handleClickOutside = (evt) => {
-      if (evt.target === popupRef.current) {
-        dispath(setIsOpen());
-      }
-    };
-    document.addEventListener("click", handleClickOutside);
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  });
+  const isOpen = useSelector((state) => state.popup.isOpen);
 
   return (
-    <div className="popup" ref={popupRef}>
-      <div className="popup__container">
+    <div
+      className={isOpen ? "popup popup_active" : "popup"}
+      onClick={() => dispath(setIsOpen())}
+    >
+      <div
+        className="popup__container"
+        onClick={(evt) => evt.stopPropagation()}
+      >
         <h3 className="popup__title">Сортировка</h3>
         <div className="checkbox">
           <label className="checkbox__label">

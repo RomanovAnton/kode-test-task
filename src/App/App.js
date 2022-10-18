@@ -15,7 +15,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path=":id" element={<CurrentItem />} />
       </Routes>
-      {isOpen && <Popup />}
+      <Popup />
     </div>
   );
 }
