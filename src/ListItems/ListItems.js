@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import UserItem from "../UserItem/UserItem";
 import fetchItems from "../redux/asyncAction";
+import Skeleton from "../Skeleton/Skeleton";
 import { useDispatch, useSelector } from "react-redux";
 import "./ListItems.scss";
 
@@ -11,11 +12,13 @@ export default function ListItems() {
     dispatch(fetchItems("all"));
   }, []);
 
+  const skeletArr = [...Array(12).keys()];
+
   return (
     <ul className="list-items">
-      {items.map((item) => (
-        <UserItem key={item.id} item={item} />
-      ))}
+      {items.length === 0
+        ? skeletArr.map((item, idx) => <Skeleton key={idx} />)
+        : items.map((item) => <UserItem key={item.id} item={item} />)}
     </ul>
   );
 }
