@@ -1,5 +1,10 @@
 @import "../sass/variables";
 
+.active-icon {
+  fill: $color-purple;
+  transition: 0.3s;
+}
+
 .search-block {
   margin: 6px auto;
   width: 100%;
@@ -10,10 +15,6 @@
   align-items: center;
   gap: 5px;
   transition: 0.3s;
-
-  &:focus-within {
-    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.05);
-  }
 
   &__input {
     padding: 0;

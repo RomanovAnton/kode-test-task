@@ -7,13 +7,12 @@ import Popup from "../Popup/Popup";
 import "./App.scss";
 
 export default function App() {
-  const isOpen = useSelector((state) => state.popup.isOpen);
 
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path=":id" element={<CurrentItem />} />
+        <Route exact path="/" element={<Home />} />
+        <Route path="user/:id" element={<CurrentItem />} />
       </Routes>
       <Popup />
     </div>

@@ -8,10 +8,14 @@ const itemsSlice = createSlice({
     status: "",
     error: "",
     category: "Все",
+    currentItem: null,
   },
   reducers: {
     setCategory: (state, action) => {
       state.category = action.payload;
+    },
+    setCurrentItem: (state, action) => {
+      state.currentItem = action.payload;
     },
   },
 
@@ -33,5 +37,5 @@ const itemsSlice = createSlice({
   },
 });
 
-export const { setCategory, changeSort } = itemsSlice.actions;
+export const { setCategory, changeSort, setCurrentItem } = itemsSlice.actions;
 export default itemsSlice.reducer;

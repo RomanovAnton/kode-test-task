@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import UserItem from "../UserItem/UserItem";
+import ItemBlock from "../ItemBlock/ItemBlock";
 import fetchItems from "../redux/asyncAction";
 import Skeleton from "../Skeleton/Skeleton";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,7 +18,7 @@ export default function ListItems() {
     <ul className="list-items">
       {items.length === 0
         ? skeletArr.map((item, idx) => <Skeleton key={idx} />)
-        : items.map((item) => <UserItem key={item.id} item={item} />)}
+        : items.map((item) => <ItemBlock key={item.id} item={item} />)}
     </ul>
   );
 }

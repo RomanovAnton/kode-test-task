@@ -1,18 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { setIsOpen } from "../redux/popupSlice";
 import { ReactComponent as SortIcon } from "../assets/sort-icon.svg";
 import { ReactComponent as SearchIcon } from "../assets/search-icon.svg";
 import "./SearchBlock.scss";
+import classNames from "classnames";
 
 export default function SearchBlock() {
   const dispatch = useDispatch();
   const [value, setValue] = useState("");
+  const [focus, setFocus] = useState(false);
+
+  const iconClass = classNames("search-block__icon", {
+    "active-icon": focus,
+  });
 
   return (
     <div className="search-block">
-      <SearchIcon className="search-block__icon" />
+      <SearchIcon className={iconClass} />
       <input
+        onFocus={() => setFocus(true)}
+        onBlur={() => setFocus(false)}
         className="search-block__input"
         type="text"
         placeholder="Введите имя, фамилию или ник..."

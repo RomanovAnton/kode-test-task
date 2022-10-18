@@ -1,0 +1,86 @@
+@import "../../sass//variables";
+
+.current-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.top {
+  width: 100%;
+  background-color: $color-light-grey;
+  height: 280px;
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  align-items: center;
+
+  &__btn-back {
+    margin: 10px;
+    align-self: flex-start;
+    width: 25px;
+    height: 25px;
+    transition: 0.3s;
+  }
+
+  &__btn-back:hover {
+    fill: $color-purple;
+  }
+
+  &__avatar {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+  }
+
+  &__name {
+    margin: 0;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  &__tag {
+    padding-left: 10px;
+    margin: 0;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  &__departament {
+    margin: 0;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.birthday {
+  width: 100%;
+  display: flex;
+
+  &__date {
+    margin-left: 10px;
+  }
+  &__age {
+    margin-left: auto;
+  }
+}
+
+.phone {
+  width: 100%;
+  display: flex;
+
+  &__number {
+    margin-left: 10px;
+  }
+}
