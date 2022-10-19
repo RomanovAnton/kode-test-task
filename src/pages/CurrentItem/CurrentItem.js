@@ -1,6 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
+import { convertDate } from "../../utils/utils";
+import { getAge } from "../../utils/utils";
+import { convertPhone } from "../../utils/utils";
 import starIcon from "../../assets/star-icon.svg";
 import phoneIcon from "../../assets/phone-icon.svg";
 import { ReactComponent as BackIcon } from "../../assets/back-icon.svg";
@@ -24,12 +27,12 @@ export default function CurrentItem() {
       <div className="bottom">
         <div className="birthday">
           <img src={starIcon} alt="star-icon" />
-          <p className="birthday__date">5 июня 1996</p>
-          <p className="birthday__age">24 года</p>
+          <p className="birthday__date">{convertDate(item.birthday)}</p>
+          <p className="birthday__age">{getAge(item.birthday)}</p>
         </div>
         <div className="phone">
           <img src={phoneIcon} alt="phone-icon" />
-          <p className="phone__number">+7 (999) 900 90 90</p>
+          <p className="phone__number">{convertPhone(item.phone)}</p>
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@ export default function SearchBlock() {
   const [focus, setFocus] = useState(false);
 
   const iconClass = classNames("search-block__icon", {
-    "active-icon": focus,
+    "active-search": focus,
   });
 
   return (
