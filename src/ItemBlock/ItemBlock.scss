@@ -2,19 +2,19 @@
 
 .item-block {
   list-style: none;
-  transform: scale(1);
-  transition: 0.3s;
-}
-
-.item-block:hover {
-  transform: scale(1.02);
 }
 
 .user-item {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 16px;
   text-decoration: none;
+  transition: 0.3s;
+  transform: scale(1);
+
+  &:hover {
+    transform: scale(1.02);
+  }
 
   &__avatar {
     width: 72px;

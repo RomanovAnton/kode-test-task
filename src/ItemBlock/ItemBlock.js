@@ -6,7 +6,6 @@ import "./ItemBlock.scss";
 
 export default function ItemBlock({ item }) {
   const dispatch = useDispatch();
-
   return (
     <li className="item-block" onClick={() => dispatch(setCurrentItem(item))}>
       <Link to={`user/${item.id}`} className="user-item">

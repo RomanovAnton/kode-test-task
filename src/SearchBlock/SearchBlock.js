@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setIsOpen } from "../redux/popupSlice";
 import { ReactComponent as SortIcon } from "../assets/sort-icon.svg";
@@ -6,9 +6,8 @@ import { ReactComponent as SearchIcon } from "../assets/search-icon.svg";
 import "./SearchBlock.scss";
 import classNames from "classnames";
 
-export default function SearchBlock() {
+export default function SearchBlock({ value, setValue }) {
   const dispatch = useDispatch();
-  const [value, setValue] = useState("");
   const [focus, setFocus] = useState(false);
 
   const iconClass = classNames("search-block__icon", {
@@ -25,7 +24,7 @@ export default function SearchBlock() {
         type="text"
         placeholder="Введите имя, фамилию или ник..."
         value={value}
-        onChange={(evt) => setValue(evt.target.value)}
+        onChange={(evt) => setValue(evt.target.value.toLowerCase())}
       />
       <SortIcon
         className="search-block__icon"

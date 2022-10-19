@@ -1,25 +1,27 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import SearchBlock from "../../SearchBlock/SearchBlock";
 import Categories from "../../Categories/Categories";
 import ListItems from "../../ListItems/ListItems";
+import { FILTER_PARAMS } from "../../utils/constants";
 import "./Home.scss";
-import fetchItems from "../../redux/asyncAction";
-import { useDispatch, useSelector } from "react-redux";
 
 export default function Home() {
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.items.items);
+  const [value, setValue] = useState("");
+  const items = useSelector((state) => state.items.items);
 
-  useEffect(() => {
-    dispatch(fetchItems("all"));
-  }, []);
+  const filteredItems = items.filter((item) => {
+    return FILTER_PARAMS.some((param) =>
+      item[param].toLowerCase().includes(value.toLowerCase())
+    );
+  });
 
   return (
     <div className="home">
       <h1 className="home__title">Поиск</h1>
-      <SearchBlock />
+      <SearchBlock value={value} setValue={setValue} />
       <Categories />
-      <ListItems />
+      <ListItems items={filteredItems} />
     </div>
   );
 }
