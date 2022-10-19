@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { setCurrentItem } from "../redux/itemsSlice";
+import { convertDate } from "../utils/utils";
 import "./ItemBlock.scss";
 
 export default function ItemBlock({ item }) {
@@ -10,10 +11,13 @@ export default function ItemBlock({ item }) {
     <li className="item-block" onClick={() => dispatch(setCurrentItem(item))}>
       <Link to={`user/${item.id}`} className="user-item">
         <img className="user-item__avatar" src={item.avatarUrl} alt="avatar" />
-        <div className="user-item__info">
-          <p className="user-item__name">{`${item.firstName} ${item.lastName}`}</p>
-          <p className="user-item__tag">{item.userTag}</p>
-          <p className="user-item__departament">{item.department}</p>
+        <div className="info">
+          <p className="info__name">{`${item.firstName} ${item.lastName}`}</p>
+          <p className="info__tag">{item.userTag}</p>
+          <p className="info__department">{item.department}</p>
+          <p className="info__birthday">
+          {convertDate(item.birthday).slice(0, -5)}
+          </p>
         </div>
       </Link>
     </li>

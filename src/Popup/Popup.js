@@ -1,11 +1,16 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeSort, setIsOpen } from "../redux/popupSlice";
+import {
+  sortByAlphabet,
+  sortByBirthday,
+  changeSort,
+} from "../redux/itemsSlice";
+import { setIsOpen } from "../redux/popupSlice";
 import "./Popup.scss";
 
 export default function Popup() {
   const dispath = useDispatch();
-  const sort = useSelector((state) => state.popup.sort);
+  const sort = useSelector((state) => state.items.sort);
   const isOpen = useSelector((state) => state.popup.isOpen);
 
   return (
@@ -25,7 +30,11 @@ export default function Popup() {
               name="sort"
               className="checkbox__real"
               checked={sort === "alphabet" ? true : false}
-              onChange={() => dispath(changeSort("alphabet"))}
+              onChange={() => {
+                dispath(changeSort("alphabet"));
+                dispath(sortByAlphabet());
+                dispath(setIsOpen());
+              }}
             />
             <span className="checkbox__custom"></span>
             По алфавиту
@@ -36,7 +45,11 @@ export default function Popup() {
               name="sort"
               className="checkbox__real"
               checked={sort === "birthday" ? true : false}
-              onChange={() => dispath(changeSort("birthday"))}
+              onChange={() => {
+                dispath(changeSort("birthday"));
+                dispath(sortByBirthday());
+                dispath(setIsOpen());
+              }}
             />
             <span className="checkbox__custom"></span>
             По дню рождения

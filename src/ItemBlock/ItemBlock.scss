@@ -21,33 +21,50 @@
     height: 72px;
     border-radius: 50%;
   }
-  &__info {
+
+  .info {
     display: grid;
     column-gap: 8px;
     row-gap: 4px;
     grid-template-areas:
       "name tag"
-      "department -";
-  }
-  &__name {
-    margin: 0;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    color: black;
-  }
-  &__tag {
-    margin: 0;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-    color: $color-grey;
-  }
-  &__departament {
-    margin: 0;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 16px;
-    color: #55555c;
+      "department -"
+      "birthday -";
+
+    &__name {
+      grid-area: name;
+      margin: 0;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      color: black;
+    }
+
+    &__tag {
+      grid-area: tag;
+      margin: 0;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      color: $color-grey;
+    }
+
+    &__department {
+      grid-area: department;
+      margin: 0;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 16px;
+      color: #55555c;
+    }
+
+    &__birthday {
+      grid-area: birthday;
+      margin: 0;
+      font-weight: 200;
+      font-size: 10px;
+      line-height: 13px;
+      color: #55555c;
+    }
   }
 }

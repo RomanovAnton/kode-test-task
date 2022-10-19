@@ -18,7 +18,7 @@ const MS_1YEAR = 31557600000;
 export const convertDate = (date) => {
   const curDate = new Date(date);
   return `${curDate.getDate()} ${
-    months[curDate.getMonth() + 1]
+    months[curDate.getMonth()]
   } ${curDate.getFullYear()}`;
 };
 
