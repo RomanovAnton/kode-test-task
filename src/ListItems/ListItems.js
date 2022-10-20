@@ -2,6 +2,7 @@ import React from "react";
 import ItemBlock from "../ItemBlock/ItemBlock";
 import NotFoundBlock from "../NotFoundBlock/NotFoundBlock";
 import Skeleton from "../Skeleton/Skeleton";
+import ErrorBlock from "../ErrorBlock/ErrorBlock";
 import { useSelector } from "react-redux";
 import "./ListItems.scss";
 
@@ -11,7 +12,9 @@ export default function ListItems({ items }) {
 
   return (
     <ul className="list-items">
-      {requestStatus === "loading" ? (
+      {requestStatus === "rejected" ? (
+        <ErrorBlock />
+      ) : requestStatus === "loading" ? (
         skeletArr.map((item, idx) => <Skeleton key={idx} />)
       ) : items.length > 0 ? (
         items.map((item) => <ItemBlock key={item.id} item={item} />)

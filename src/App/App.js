@@ -13,7 +13,7 @@ export default function App() {
   useEffect(() => {
     dispatch(fetchItems("all"));
   }, []);
-  
+
   return (
     <div className="App">
       <Routes>
