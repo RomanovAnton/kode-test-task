@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+#### kode-test-task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Дизайн
 
-## Available Scripts
+[https://www.figma.com/file/GRRKONipVClULsfdCAuVs1/KODE-Trainee-Dev-Осень'21?node-id=11%3A14414](https://www.figma.com/file/GRRKONipVClULsfdCAuVs1/KODE-Trainee-Dev-%D0%9E%D1%81%D0%B5%D0%BD%D1%8C'21?node-id=11%3A14414)
 
-In the project directory, you can run:
+### Функциональные требования
 
-### `npm start`
+Когда пользователь открывает сайт, необходимо загрузить актуальный список всех работников компании.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+При входе в приложение необходимо отобразить экран 2.0.0. Изначально он должен быть в состоянии загрузки, экран 1.0.0. Если при загрузке произошла ошибка, отсутствует интернет-соединение или API вернул ошибку, необходимо отобразить экран «Критическая ошибка». В случае успеха необходимо отобразить Top App Bar и список людей.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Top App Bar
 
-### `npm test`
+Компонент находится вверху экрана и представляет собой поле для поиска с иконкой «Поиск», кнопкой «Сортировка» и панелью вкладок. При переключении между вкладками на главном экране список работников фильтруется и отображаются только люди, работающие в выбранном департаменте, либо все, если выбрана вкладка «Все».
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+При нажатии на кнопку «Фильтр» открывается модальное окно с вариантами сортировки списка работников. Есть два варианта сортировки: «По алфавиту» (по умолчанию), «По дню рождения». При переключении варианта сортировки модальное окно должно закрываться, а список на главной странице должен обновиться.
 
-### `npm run build`
+Когда пользователь вводит текст в поисковое поле, необходимо фильтровать список на главном экране и отображать только работников, соответствующих параметрам поиска. Поиск может осуществляться по имени, фамилии или никнейму, состоящему из двух символов.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+В случае отсутствия результатов поиска необходимо отобразить информацию о том, что ничего не было найдено. Экран "2.0.2Г Люди (Ошибка поиска)"
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Страница «Главная»
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+На странице должна быть расположена верхняя панель приложения, на которой должны находиться:
 
-### `npm run eject`
+- поле для поиска;
+- панель вкладок для группировки загруженного списка пользователей;
+- список работников.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Список должен обновляться каждый раз, когда меняются параметры поиска, обновляется вариант сортировки или пользователь переключает вкладки департаментов.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Пользователь имеет возможность скроллить список работников.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+В режиме сортировки «По алфавиту» для каждого работника отображается его фотография, имя, никнейм и департамент.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+В режиме сортировки «По дню рождения» список отображается от ближайшей даты дня рождения вниз. Если день рождения следующего работника будет только в следующем году, то необходимо отобразить блок с годом, экран 2.0.1.
 
-## Learn More
+Когда пользователь кликнет на человека, необходимо открыть экран информации о человеке (экран «детали»).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Страница «детали»
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Должна быть реализована как отдельный роут в приложении.
 
-### Code Splitting
+Должна быть возможность попасть на страницу по ссылке.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Вверху экрана деталей должна отображаться кнопка назад для навигации на главный экран. Также можно вернуться на главный экран, если нажать кнопку назад в браузере.
 
-### Analyzing the Bundle Size
+В шапке экрана должна отображаться аватарка пользователя, имя, никнейм и название департамента.
+Ниже находится дата рождения и номер телефона. При нажатии на номер телефона необходимо открыть приложение для звонка по номеру.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### Технологии:
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img alt="react" src="https://img.shields.io/badge/react-61DAFB.svg?&style=flat-square&logo=react&logoColor=fff" />&nbsp;
+<img alt="redux" src="https://img.shields.io/badge/redux-BA55D3.svg?&style=flat-square&logo=redux&logoColor=#fff" />&nbsp;
+<img alt="sass" src="https://img.shields.io/badge/sass-cf649a.svg?&style=flat-square&logo=sass&logoColor=fff" />&nbsp;

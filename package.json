@@ -25,7 +25,6 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-
   },
   "eslintConfig": {
     "extends": [
@@ -48,5 +47,5 @@
   "devDependencies": {
     "gh-pages": "^4.0.0"
   },
-  "homepage": "./"
+  "homepage": "https://romanovanton.github.io/kode-test-task/"
 }
