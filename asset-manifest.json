@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "./static/css/main.3eefd9b9.css",
-    "main.js": "./static/js/main.414143d6.js",
-    "static/media/sort-icon.svg": "./static/media/sort-icon.94b612eefb0f98986509103cb31dd70e.svg",
-    "static/media/phone-icon.svg": "./static/media/phone-icon.9fc30247dae9d263fb9527cc13edca93.svg",
-    "static/media/star-icon.svg": "./static/media/star-icon.9e4ac22f4832ac3dd9c8ee1965b0152a.svg",
-    "static/media/back-icon.svg": "./static/media/back-icon.844a937cf3e617a60fcd40cab6a43afa.svg",
-    "static/media/search-icon.svg": "./static/media/search-icon.c0308f757933c7abe4149e1b5cb350be.svg",
-    "index.html": "./index.html",
-    "main.3eefd9b9.css.map": "./static/css/main.3eefd9b9.css.map",
-    "main.414143d6.js.map": "./static/js/main.414143d6.js.map"
+    "main.css": "/kode-test-task/static/css/main.3eefd9b9.css",
+    "main.js": "/kode-test-task/static/js/main.72aa5c4f.js",
+    "static/media/sort-icon.svg": "/kode-test-task/static/media/sort-icon.94b612eefb0f98986509103cb31dd70e.svg",
+    "static/media/phone-icon.svg": "/kode-test-task/static/media/phone-icon.9fc30247dae9d263fb9527cc13edca93.svg",
+    "static/media/star-icon.svg": "/kode-test-task/static/media/star-icon.9e4ac22f4832ac3dd9c8ee1965b0152a.svg",
+    "static/media/back-icon.svg": "/kode-test-task/static/media/back-icon.844a937cf3e617a60fcd40cab6a43afa.svg",
+    "static/media/search-icon.svg": "/kode-test-task/static/media/search-icon.c0308f757933c7abe4149e1b5cb350be.svg",
+    "index.html": "/kode-test-task/index.html",
+    "main.3eefd9b9.css.map": "/kode-test-task/static/css/main.3eefd9b9.css.map",
+    "main.72aa5c4f.js.map": "/kode-test-task/static/js/main.72aa5c4f.js.map"
   },
   "entrypoints": [
     "static/css/main.3eefd9b9.css",
-    "static/js/main.414143d6.js"
+    "static/js/main.72aa5c4f.js"
   ]
 }
