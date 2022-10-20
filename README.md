@@ -1,8 +1,4 @@
-#### kode-test-task
-
-### Дизайн
-
-[https://www.figma.com/file/GRRKONipVClULsfdCAuVs1/KODE-Trainee-Dev-Осень'21?node-id=11%3A14414](https://www.figma.com/file/GRRKONipVClULsfdCAuVs1/KODE-Trainee-Dev-%D0%9E%D1%81%D0%B5%D0%BD%D1%8C'21?node-id=11%3A14414)
+### kode-test-task
 
 ### Функциональные требования
 
@@ -54,3 +50,6 @@
 <img alt="react" src="https://img.shields.io/badge/react-61DAFB.svg?&style=flat-square&logo=react&logoColor=fff" />&nbsp;
 <img alt="redux" src="https://img.shields.io/badge/redux-BA55D3.svg?&style=flat-square&logo=redux&logoColor=#fff" />&nbsp;
 <img alt="sass" src="https://img.shields.io/badge/sass-cf649a.svg?&style=flat-square&logo=sass&logoColor=fff" />&nbsp;
+
+#### Деплой:
+Проект доступен по ссылке: https://romanovanton.github.io/kode-test-task/
